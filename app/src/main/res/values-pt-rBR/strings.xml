@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="login_pass">Senha</string>
+    <string name="login_login">Acessar</string>
+    <string name="login_register">Registrar</string>
+    <string name="login_activity">Acessar</string>
+    <string name="img_logo">Logo do BurgerShack</string>
+    <string name="main_loading">Carregando...</string>
+</resources>

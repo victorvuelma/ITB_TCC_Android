@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name" translatable="false">BurgerShack</string>
+    <string name="doc_cpf" translatable="false">CPF</string>
+    <string name="login_pass">Password</string>
+    <string name="login_login">Login</string>
+    <string name="login_register">Register</string>
+    <string name="login_activity">Login</string>
+    <string name="img_logo">BurgerShack Logo</string>
+    <string name="main_loading">Loading...</string>
 </resources>
