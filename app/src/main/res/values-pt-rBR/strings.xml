@@ -6,4 +6,10 @@
     <string name="login_activity">Acessar</string>
     <string name="img_logo">Logo do BurgerShack</string>
     <string name="main_loading">Carregando...</string>
+    <string name="menu_hamburgers">Hambúrguers</string>
+    <string name="menu_drinks">Bebidas</string>
+    <string name="menu_desserts">Sobremesas</string>
+    <string name="menu_accompaniments">Acompanhamentos</string>
+    <string name="menu_login">Acessar</string>
+    <string name="menu_booking">Reserva</string>
 </resources>

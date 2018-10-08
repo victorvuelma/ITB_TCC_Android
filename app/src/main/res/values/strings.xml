@@ -7,4 +7,10 @@
     <string name="login_activity">Login</string>
     <string name="img_logo">BurgerShack Logo</string>
     <string name="main_loading">Loading...</string>
+    <string name="menu_hamburgers">Hamburgers</string>
+    <string name="menu_drinks">Drinks</string>
+    <string name="menu_desserts">Desserts</string>
+    <string name="menu_accompaniments">Accompaniments</string>
+    <string name="menu_login">Login</string>
+    <string name="menu_booking">Booking</string>
 </resources>
