@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name" translatable="false">BurgerShack</string>
-    <string name="doc_cpf" translatable="false">CPF</string>
-    <string name="login_pass">Password</string>
-    <string name="login_login">Login</string>
-    <string name="login_register">Register</string>
-    <string name="login_activity">Login</string>
-    <string name="img_logo">BurgerShack Logo</string>
-    <string name="main_loading">Loading...</string>
+    <string name="document_cpf" translatable="false">CPF</string>
+    <string name="input_password">Password</string>
+    <string name="action_login">Login</string>
+    <string name="action_register">Register</string>
+    <string name="image_logo">BurgerShack Logo</string>
+    <string name="product_hamburgers">Hamburgers</string>
+    <string name="product_drinks">Drinks</string>
+    <string name="product_desserts">Desserts</string>
+    <string name="product_accompaniments">Accompaniments</string>
+    <string name="action_booking">Booking</string>
+    <string name="title_login">Access your Account</string>
+    <string name="title_menu" translatable="false">Menu</string>
+    <string name="action_back">Back</string>
+    <string name="action_account">My Account</string>
 </resources>

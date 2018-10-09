@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="login_pass">Senha</string>
-    <string name="login_login">Acessar</string>
-    <string name="login_register">Registrar</string>
-    <string name="login_activity">Acessar</string>
-    <string name="img_logo">Logo do BurgerShack</string>
-    <string name="main_loading">Carregando...</string>
+    <string name="input_password">Senha</string>
+    <string name="action_login">Acessar</string>
+    <string name="action_register">Registrar</string>
+    <string name="image_logo">Logo do BurgerShack</string>
+    <string name="product_hamburgers">Hambúrguers</string>
+    <string name="product_drinks">Bebidas</string>
+    <string name="product_desserts">Sobremesas</string>
+    <string name="product_accompaniments">Acompanhamentos</string>
+    <string name="action_booking">Reserva</string>
+    <string name="title_login">Acesse sua Conta</string>
+    <string name="action_back">Voltar</string>
+    <string name="action_account">Minha Conta</string>
 </resources>
