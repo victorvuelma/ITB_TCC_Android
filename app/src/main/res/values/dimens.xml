@@ -3,5 +3,6 @@
     <dimen name="app_icon_button_drawable_padding">10dp</dimen>
     <dimen name="app_icon_button_text_size">20sp</dimen>
     <dimen name="app_title_text_size">20sp</dimen>
-    <dimen name="app_logo_padding">10dp</dimen>
+    <dimen name="app_title_padding">10dp</dimen>
+    <dimen name="app_title_menu_dimen">50dp</dimen>
 </resources>

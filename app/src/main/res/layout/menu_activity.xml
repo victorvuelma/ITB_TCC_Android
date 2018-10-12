@@ -2,120 +2,152 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/baseMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context=".activity.MenuActivity">
 
-    <ImageView
-        android:id="@+id/imgMenuLogo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="false"
-        android:background="@color/colorPrimaryDark"
-        android:contentDescription="@string/image_logo"
-        android:cropToPadding="false"
-        android:padding="@dimen/app_logo_padding"
-        android:src="@drawable/app_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnMenuHamburger"
-        style="@style/ButtonStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:drawableStart="@drawable/product_hamburger"
-        android:drawablePadding="@dimen/app_icon_button_drawable_padding"
-        android:onClick="menuHamburgers"
-        android:text="@string/product_hamburgers"
-        android:textAlignment="textStart"
-        android:textAllCaps="true"
-        android:textSize="@dimen/app_title_text_size"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMenu" />
-
-    <Button
-        android:id="@+id/btnMenuDrink"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:drawableStart="@drawable/product_drink"
-        android:drawablePadding="@dimen/app_icon_button_drawable_padding"
-        android:onClick="menuDrinks"
-        android:text="@string/product_drinks"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/app_title_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMenuHamburger" />
-
-    <Button
-        android:id="@+id/btnMenuAccompaniment"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:drawableStart="@drawable/product_accompaniment"
-        android:drawablePadding="@dimen/app_icon_button_drawable_padding"
-        android:text="@string/product_accompaniments"
-        android:textAlignment="viewStart"
-        android:textSize="@dimen/app_title_text_size"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMenuDrink" />
-
-    <Button
-        android:id="@+id/btnMenuDesserts"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:drawableStart="@drawable/product_dessert"
-        android:drawablePadding="@dimen/app_icon_button_drawable_padding"
-        android:onClick="menuDesserts"
-        android:text="@string/product_desserts"
-        android:textAlignment="viewStart"
-        android:textSize="@dimen/app_title_text_size"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMenuAccompaniment" />
-
-    <Button
-        android:id="@+id/btnMenuAccount"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="5dp"
-        android:drawableStart="@drawable/action_account"
-        android:drawablePadding="15dp"
-        android:onClick="menuAccount"
-        android:text="@string/action_account"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/app_title_text_size"
-        android:textStyle="bold"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/title_menu"
-        android:textAlignment="center"
-        android:textSize="@dimen/app_title_text_size"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgMenuLogo" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/layoutMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/layoutMenuTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/titleBackgroundColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgMenuLogo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="65dp"
+                    android:layout_marginBottom="10dp"
+                    android:adjustViewBounds="false"
+                    android:contentDescription="@string/image_logo"
+                    android:cropToPadding="false"
+                    android:src="@drawable/app_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtMenuTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/title_menu"
+                android:textAlignment="center"
+                android:textSize="@dimen/app_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutMenuTitle" />
+
+            <Button
+                android:id="@+id/btnMenuDrink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/product_drink"
+                android:drawablePadding="@dimen/app_icon_button_drawable_padding"
+                android:onClick="menuDrinks"
+                android:text="@string/product_drinks"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/app_title_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnMenuHamburger" />
+
+            <Button
+                android:id="@+id/btnMenuAccompaniment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/product_accompaniment"
+                android:drawablePadding="@dimen/app_icon_button_drawable_padding"
+                android:text="@string/product_accompaniments"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/app_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnMenuDrink" />
+
+            <Button
+                android:id="@+id/btnMenuAccount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="3dp"
+                android:drawableStart="@drawable/action_account"
+                android:drawablePadding="15dp"
+                android:onClick="menuAccount"
+                android:text="@string/action_account"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/app_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnMenuDesserts" />
+
+            <Button
+                android:id="@+id/btnMenuDesserts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/product_dessert"
+                android:drawablePadding="@dimen/app_icon_button_drawable_padding"
+                android:onClick="menuDesserts"
+                android:text="@string/product_desserts"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/app_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnMenuAccompaniment" />
+
+            <Button
+                android:id="@+id/btnMenuHamburger"
+                style="@style/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawableStart="@drawable/product_hamburger"
+                android:drawablePadding="@dimen/app_icon_button_drawable_padding"
+                android:onClick="menuHamburgers"
+                android:text="@string/product_hamburgers"
+                android:textAlignment="textStart"
+                android:textAllCaps="true"
+                android:textSize="@dimen/app_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMenuTitle" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

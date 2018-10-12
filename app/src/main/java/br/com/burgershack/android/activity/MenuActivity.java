@@ -16,25 +16,25 @@ public class MenuActivity extends Activity {
         setContentView(R.layout.menu_activity);
     }
 
-    public void menuHamburgers(View v){
+    public void menuHamburgers(View v) {
         Intent it = new Intent(getBaseContext(), ProductActivity.class);
         it.putExtra("title", R.string.product_hamburgers);
         startActivity(it);
     }
 
-    public void menuDrinks(View v){
+    public void menuDrinks(View v) {
         Intent it = new Intent(getBaseContext(), ProductActivity.class);
         it.putExtra("title", R.string.product_drinks);
         startActivity(it);
     }
 
-    public void menuDesserts(View v){
+    public void menuDesserts(View v) {
         Intent it = new Intent(getBaseContext(), ProductActivity.class);
         it.putExtra("title", R.string.product_desserts);
         startActivity(it);
     }
 
-    public void menuAccount(View v){
+    public void menuAccount(View v) {
         Intent it = new Intent(getBaseContext(), LoginActivity.class);
         startActivity(it);
     }

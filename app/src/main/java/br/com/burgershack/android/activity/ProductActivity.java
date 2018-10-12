@@ -21,14 +21,18 @@ public class ProductActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.products_activity);
 
-        Intent it = getIntent();
-        int title = Integer.parseInt(it.getExtras().get("title").toString());
+        try {
+            Intent it = getIntent();
+            int title = Integer.parseInt(it.getExtras().getString("title"));
 
-        TextView txtTitle = (TextView) findViewById(R.id.txtProductsTitle);
-        txtTitle.setText(title);
+            TextView txtTitle = (TextView) findViewById(R.id.txtProductsTitle);
+            txtTitle.setText(title);
+        } catch (Exception ex){
+            finish();
+        }
     }
 
-    public void productBack(View v){
+    public void productMenu(View v) {
         finish();
     }
 

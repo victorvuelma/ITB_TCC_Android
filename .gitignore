@@ -1,5 +1,5 @@
 
-# Created by https://www.gitignore.io/api/git,gradle,android,windows,intellij,jetbrains,androidstudio
+# Created by https://www.gitignore.io/api/android,androidstudio,git,gradle,intellij,jetbrains,windows
 
 ### Android ###
 # Built application files
@@ -355,4 +355,4 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 
-# End of https://www.gitignore.io/api/git,gradle,android,windows,intellij,jetbrains,androidstudio
+# End of https://www.gitignore.io/api/android,androidstudio,git,gradle,intellij,jetbrains,windows

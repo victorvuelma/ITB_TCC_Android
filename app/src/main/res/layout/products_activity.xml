@@ -2,50 +2,46 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutProducts"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.ProductActivity">
 
-    <Button
-        android:id="@+id/btnProductsBack"
-        android:layout_width="0dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layoutProductsTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:drawableStart="@drawable/action_back"
-        android:drawablePadding="@dimen/app_icon_button_drawable_padding"
-        android:onClick="productBack"
-        android:text="@string/action_back"
-        android:textAlignment="viewStart"
-        android:textSize="@dimen/app_icon_button_text_size"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ListView
-        android:id="@+id/ltvProducts"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/btnProductsBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProductsTitle" />
-
-    <ImageView
-        android:id="@+id/imgProductsLogo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:contentDescription="@string/image_logo"
-        android:padding="@dimen/app_logo_padding"
-        android:src="@drawable/app_logo"
+        android:background="@color/titleBackgroundColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgProductsLogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/image_logo"
+            android:src="@drawable/app_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnProductsMenu"
+            android:layout_width="@dimen/app_title_menu_dimen"
+            android:layout_height="@dimen/app_title_menu_dimen"
+            android:background="@drawable/action_menu"
+            android:onClick="productMenu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgProductsLogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 
     <TextView
         android:id="@+id/txtProductsTitle"
@@ -57,6 +53,20 @@
         android:textSize="@dimen/app_title_text_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgProductsLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutProductsTitle" />
+
+    <ListView
+        android:id="@+id/ltvProducts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProductsTitle" />
+
 </android.support.constraint.ConstraintLayout>

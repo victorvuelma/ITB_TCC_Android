@@ -2,117 +2,148 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layoutLogin"
+    android:id="@+id/baseLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context=".activity.LoginActivity">
 
-    <ImageView
-        android:id="@+id/imgLoginLogo"
+    <ScrollView
+        android:id="@+id/scrollLogin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:contentDescription="@string/image_logo"
-        android:padding="@dimen/app_logo_padding"
-        android:src="@drawable/app_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edtLoginCpf"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="10dp"
-        android:ems="10"
-        android:hint="@string/document_cpf"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
-
-    <EditText
-        android:id="@+id/edtLoginPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="10dp"
-        android:ems="10"
-        android:hint="@string/input_password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtLoginCpf" />
-
-    <Button
-        android:id="@+id/btnLoginLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:drawableStart="@drawable/action_login"
-        android:drawablePadding="@dimen/app_icon_button_drawable_padding"
-        android:onClick="loginLogin"
-        android:padding="10dp"
-        android:text="@string/action_login"
-        android:textAlignment="viewStart"
-        android:textAllCaps="true"
-        android:textSize="@dimen/app_icon_button_text_size"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtLoginPassword" />
-
-    <Button
-        android:id="@+id/btnLoginRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:drawableStart="@drawable/action_register"
-        android:drawablePadding="@dimen/app_icon_button_drawable_padding"
-        android:onClick="loginRegister"
-        android:text="@string/action_register"
-        android:textAlignment="viewStart"
-        android:textAllCaps="true"
-        android:textSize="@dimen/app_icon_button_text_size"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLoginLogin" />
-
-    <TextView
-        android:id="@+id/txtLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/title_login"
-        android:textAlignment="center"
-        android:textSize="@dimen/app_title_text_size"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLoginLogo" />
-
-    <Button
-        android:id="@+id/btnLoginBack"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:drawableStart="@drawable/action_back"
-        android:drawablePadding="@dimen/app_icon_button_drawable_padding"
-        android:onClick="loginBack"
-        android:text="@string/action_back"
-        android:textAlignment="viewStart"
-        android:textSize="@dimen/app_icon_button_text_size"
-        android:textStyle="bold"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/layoutLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/layoutLoginTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/titleBackgroundColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgLoginLogo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="65dp"
+                    android:layout_marginBottom="10dp"
+                    android:contentDescription="@string/image_logo"
+                    android:src="@drawable/app_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnLoginMenu"
+                    android:layout_width="@dimen/app_title_menu_dimen"
+                    android:layout_height="@dimen/app_title_menu_dimen"
+                    android:background="@drawable/action_menu"
+                    android:onClick="loginMenu"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imgLoginLogo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtLoginTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/titleBackgroundColor"
+                android:text="@string/title_login"
+                android:textAlignment="center"
+                android:textSize="@dimen/app_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutLoginTitle" />
+
+            <EditText
+                android:id="@+id/edtLoginCpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint="@string/document_cpf"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtLoginTitle" />
+
+            <EditText
+                android:id="@+id/edtLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint="@string/input_password"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtLoginCpf" />
+
+            <Button
+                android:id="@+id/btnLoginLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:drawableStart="@drawable/action_login"
+                android:drawablePadding="@dimen/app_icon_button_drawable_padding"
+                android:onClick="loginLogin"
+                android:padding="10dp"
+                android:text="@string/action_login"
+                android:textAlignment="viewStart"
+                android:textAllCaps="true"
+                android:textSize="@dimen/app_icon_button_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtLoginPassword" />
+
+            <Button
+                android:id="@+id/btnLoginRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/action_register"
+                android:drawablePadding="@dimen/app_icon_button_drawable_padding"
+                android:onClick="loginRegister"
+                android:text="@string/action_register"
+                android:textAlignment="viewStart"
+                android:textAllCaps="true"
+                android:textSize="@dimen/app_icon_button_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnLoginLogin" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
