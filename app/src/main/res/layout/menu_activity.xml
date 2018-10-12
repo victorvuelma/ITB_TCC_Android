@@ -86,6 +86,7 @@
                 android:layout_marginTop="10dp"
                 android:drawableStart="@drawable/product_accompaniment"
                 android:drawablePadding="@dimen/app_icon_button_drawable_padding"
+                android:onClick="menuAccompaniments"
                 android:text="@string/product_accompaniments"
                 android:textAlignment="viewStart"
                 android:textSize="@dimen/app_title_text_size"

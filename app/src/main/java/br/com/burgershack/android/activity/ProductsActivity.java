@@ -14,7 +14,7 @@ import java.util.List;
 
 import br.com.burgershack.android.R;
 
-public class ProductActivity extends Activity {
+public class ProductsActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,11 +23,11 @@ public class ProductActivity extends Activity {
 
         try {
             Intent it = getIntent();
-            int title = Integer.parseInt(it.getExtras().getString("title"));
+            int title = it.getExtras().getInt("title");
 
             TextView txtTitle = (TextView) findViewById(R.id.txtProductsTitle);
             txtTitle.setText(title);
-        } catch (Exception ex){
+        } catch (NullPointerException ex){
             finish();
         }
     }
