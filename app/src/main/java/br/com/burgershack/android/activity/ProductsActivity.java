@@ -36,6 +36,7 @@ public class ProductsActivity extends Activity {
 
             int tipo = it.getExtras().getInt("tipo");
             List<Product> products = BurgerShackApp.DATA_LOCAL.getProducts(tipo);
+            products.add(new Product(1,"TESTE", "", "TESTE DE DESCRIÇÃO", 10.50, 1 ));
             showProducts(products);
         } catch (NullPointerException ex){
             finish();

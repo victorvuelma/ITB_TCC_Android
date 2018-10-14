@@ -1,5 +1,8 @@
 package br.com.burgershack.android;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import br.com.burgershack.android.data.DataLocal;
 import br.com.burgershack.android.data.DataWeb;
 
@@ -13,5 +16,8 @@ public class BurgerShackApp {
 
     public static DataLocal DATA_LOCAL = new DataLocal();
     public static DataWeb DATA_WEB = new DataWeb();
+
+    public static Locale LOCALE = new Locale("pt", "BR");
+    public static NumberFormat CURRENCY_FORMAT  = NumberFormat.getCurrencyInstance(LOCALE);
 
 }
