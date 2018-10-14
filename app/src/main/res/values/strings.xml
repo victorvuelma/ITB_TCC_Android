@@ -14,4 +14,5 @@
     <string name="title_menu" translatable="false">Menu</string>
     <string name="action_back">Back</string>
     <string name="action_account">My Account</string>
+    <string name="product_image">Image of Product</string>
 </resources>
