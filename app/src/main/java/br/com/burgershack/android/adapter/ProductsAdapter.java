@@ -1,4 +1,4 @@
-package br.com.burgershack.android.util;
+package br.com.burgershack.android.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

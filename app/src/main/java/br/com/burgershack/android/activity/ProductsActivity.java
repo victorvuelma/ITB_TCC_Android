@@ -1,24 +1,19 @@
 package br.com.burgershack.android.activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.burgershack.android.BurgerShackApp;
 import br.com.burgershack.android.R;
 import br.com.burgershack.android.object.Product;
-import br.com.burgershack.android.util.ProductsAdapter;
+import br.com.burgershack.android.adapter.ProductsAdapter;
 
 public class ProductsActivity extends Activity {
 
@@ -34,20 +29,20 @@ public class ProductsActivity extends Activity {
             TextView txtTitle = (TextView) findViewById(R.id.txtProductsTitle);
             txtTitle.setText(title);
 
-            int tipo = it.getExtras().getInt("tipo");
-            List<Product> products = BurgerShackApp.DATA_LOCAL.getProducts(tipo);
-            products.add(new Product(1,"TESTE", "", "TESTE DE DESCRIÇÃO", 10.50, 1 ));
+            int type = it.getExtras().getInt("type");
+            List<Product> products = BurgerShackApp.DATA_LOCAL.getProducts(type);
+            products.add(new Product(1, "TESTE", "", "TESTE DE DESCRIÇÃO", 10.50, 1));
             showProducts(products);
-        } catch (NullPointerException ex){
+        } catch (NullPointerException ex) {
             finish();
         }
     }
 
-    public void productMenu(View v) {
+    public void productsBack(View v) {
         finish();
     }
 
-    public void showProducts(List<Product> products){
+    public void showProducts(List<Product> products) {
         ListView productsList = (ListView) findViewById(R.id.ltvProducts);
 
         ProductsAdapter productsAdapter = new ProductsAdapter(this, products);

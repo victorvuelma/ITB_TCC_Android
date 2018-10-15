@@ -51,11 +51,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btnLoginMenu"
+                    android:id="@+id/btnLoginBack"
                     android:layout_width="@dimen/app_title_menu_dimen"
                     android:layout_height="@dimen/app_title_menu_dimen"
-                    android:background="@drawable/action_menu"
-                    android:onClick="loginMenu"
+                    android:background="@drawable/action_back"
+                    android:onClick="loginBack"
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:textStyle="bold"

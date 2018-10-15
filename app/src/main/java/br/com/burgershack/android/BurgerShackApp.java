@@ -1,6 +1,9 @@
 package br.com.burgershack.android;
 
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 import br.com.burgershack.android.data.DataLocal;
@@ -19,5 +22,6 @@ public class BurgerShackApp {
 
     public static Locale LOCALE = new Locale("pt", "BR");
     public static NumberFormat CURRENCY_FORMAT  = NumberFormat.getCurrencyInstance(LOCALE);
+    public  static DateFormat DATE_FORMAT = SimpleDateFormat.getDateInstance(DateFormat.DEFAULT, LOCALE);
 
 }

@@ -32,7 +32,7 @@ public class LoginActivity extends Activity {
         Util.openWebPage(this, BurgerShackApp.URL_CADASTRO);
     }
 
-    public void loginMenu(View v) {
+    public void loginBack(View v) {
         finish();
     }
 

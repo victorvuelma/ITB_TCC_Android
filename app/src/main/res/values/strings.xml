@@ -9,10 +9,17 @@
     <string name="product_drinks">Drinks</string>
     <string name="product_desserts">Desserts</string>
     <string name="product_accompaniments">Accompaniments</string>
-    <string name="action_booking">Booking</string>
+    <string name="action_bookings">My Bookings</string>
     <string name="title_login">Access your Account</string>
     <string name="title_menu" translatable="false">Menu</string>
     <string name="action_back">Back</string>
     <string name="action_account">My Account</string>
     <string name="product_image">Image of Product</string>
+    <string name="title_account">My Account</string>
+    <string name="action_logout">Logout</string>
+    <string name="title_bookings">My Bookings</string>
+    <string name="people">People</string>
+    <string name="person">Person</string>
+    <string name="action_booking_new">New Booking</string>
+    <string name="tilte_booking_new">New Booking</string>
 </resources>

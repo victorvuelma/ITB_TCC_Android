@@ -2,13 +2,13 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layoutProducts"
+    android:id="@+id/layoutBookingNew"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.ProductsActivity">
+    tools:context=".activity.BookingNewActivity">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/layoutProductsTitle"
+        android:id="@+id/layoutBookingNewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/titleBackgroundColor"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgProductsLogo"
+            android:id="@+id/imgBookingNewLogo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="65dp"
@@ -32,41 +32,30 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnProductsMenu"
+            android:id="@+id/btnBookingNewBack"
             android:layout_width="@dimen/app_title_menu_dimen"
             android:layout_height="@dimen/app_title_menu_dimen"
             android:background="@drawable/action_back"
-            android:onClick="productsBack"
+            android:onClick="bookingNewBack"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imgProductsLogo"
+            app:layout_constraintEnd_toStartOf="@+id/imgBookingNewLogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
     <TextView
-        android:id="@+id/txtProductsTitle"
+        android:id="@+id/txtBookingNewTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@color/colorPrimaryDark"
+        android:text="@string/tilte_booking_new"
         android:textAlignment="center"
         android:textSize="@dimen/app_title_text_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutProductsTitle" />
-
-    <ListView
-        android:id="@+id/ltvProducts"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProductsTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutBookingNewTitle" />
 
 </android.support.constraint.ConstraintLayout>

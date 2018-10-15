@@ -24,29 +24,33 @@ public class MenuActivity extends Activity {
     public void menuHamburgers(View v) {
         Intent it = new Intent(getBaseContext(), ProductsActivity.class);
         it.putExtra("title", R.string.product_hamburgers);
+        it.putExtra("type", 1);
         startActivity(it);
     }
 
     public void menuDrinks(View v) {
         Intent it = new Intent(getBaseContext(), ProductsActivity.class);
         it.putExtra("title", R.string.product_drinks);
+        it.putExtra("type", 3);
         startActivity(it);
     }
 
     public void menuAccompaniments(View v){
         Intent it = new Intent(getBaseContext(), ProductsActivity.class);
         it.putExtra("title", R.string.product_accompaniments);
+        it.putExtra("type", 2);
         startActivity(it);
     }
 
     public void menuDesserts(View v) {
         Intent it = new Intent(getBaseContext(), ProductsActivity.class);
         it.putExtra("title", R.string.product_desserts);
+        it.putExtra("type", 4);
         startActivity(it);
     }
 
     public void menuAccount(View v) {
-        Intent it = new Intent(getBaseContext(), LoginActivity.class);
+        Intent it = new Intent(getBaseContext(), AccountActivity.class);
         startActivity(it);
     }
 
