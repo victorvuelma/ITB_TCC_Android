@@ -16,9 +16,7 @@ public class MenuActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_activity);
 
-        BurgerShackApp.DATA_LOCAL.setup(this);
-        BurgerShackApp.DATA_WEB.download();
-
+        BurgerShackApp.init(this);
     }
 
     public void menuHamburgers(View v) {

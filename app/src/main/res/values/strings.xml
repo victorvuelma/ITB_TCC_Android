@@ -22,4 +22,7 @@
     <string name="person">Person</string>
     <string name="action_booking_new">New Booking</string>
     <string name="tilte_booking_new">New Booking</string>
+    <string name="booking_date">Booking Date</string>
+    <string name="booking_people">Booking People</string>
+    <string name="booking_info">Booking Information</string>
 </resources>

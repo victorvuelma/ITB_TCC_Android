@@ -24,4 +24,6 @@
         <activity android:name=".activity.BookingNewActivity"/>
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 </manifest>

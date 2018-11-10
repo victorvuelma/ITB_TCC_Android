@@ -20,4 +20,7 @@
     <string name="person">Pessoa</string>
     <string name="action_booking_new">Nova Reserva</string>
     <string name="tilte_booking_new">Nova Reserva</string>
+    <string name="booking_date">Data da Reserva</string>
+    <string name="booking_people">Lugares da Reserva</string>
+    <string name="booking_info">Informação da Reserva</string>
 </resources>
