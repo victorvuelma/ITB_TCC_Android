@@ -23,4 +23,5 @@
     <string name="booking_date">Data da Reserva</string>
     <string name="booking_people">Lugares da Reserva</string>
     <string name="booking_info">Informação da Reserva</string>
+    <string name="error_download">Erro ao tentar baixar os dados.</string>
 </resources>

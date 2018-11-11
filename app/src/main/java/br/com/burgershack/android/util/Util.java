@@ -3,10 +3,14 @@ package br.com.burgershack.android.util;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Scanner;
 
 public class Util {
 
@@ -19,19 +23,20 @@ public class Util {
         activity.startActivity(intent);
     }
 
-    public static String getURLContent(String url){
+    public static String getURLContent(String url) throws IOException {
         StringBuilder responseBuilder = new StringBuilder();
-        try {
             URL connURL = new URL(url);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connURL.openConnection().getInputStream()));
-            String line = null;
-            while((line = reader.readLine()) != null){
-                responseBuilder.append(line);
+            HttpURLConnection connection = (HttpURLConnection) connURL.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setDoOutput(true);
+            connection.setConnectTimeout(5000);
+            connection.connect();
+            Scanner scanner = new Scanner(connURL.openStream());
+            while (scanner.hasNext()) {
+                responseBuilder.append(scanner.next().replace("%20", " "));
             }
-            reader.close();
-        } catch (java.io.IOException e) {
-            e.printStackTrace();
-        }
+            scanner.close();
+            connection.disconnect();
         return responseBuilder.toString();
     }
 

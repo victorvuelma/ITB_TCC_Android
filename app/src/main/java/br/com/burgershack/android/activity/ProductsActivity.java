@@ -30,7 +30,7 @@ public class ProductsActivity extends Activity {
             txtTitle.setText(title);
 
             int type = it.getExtras().getInt("type");
-            List<Product> products = BurgerShackApp.DATA_LOCAL.getProducts(type);
+            List<Product> products = BurgerShackApp.DATA_LOCAL.obterProdutos(type);
             products.add(new Product(1, "TESTE", "", "TESTE DE DESCRIÇÃO", 10.50, 1));
             showProducts(products);
         } catch (NullPointerException ex) {

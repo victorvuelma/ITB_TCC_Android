@@ -25,7 +25,7 @@ public class DataLocal {
         database.execSQL("CREATE TABLE IF NOT EXISTS USER_BOOKINGS (CODIGO INTEGER NOT NULL, DATA DATE NOT NULL, LUGARES INTEGER NOT NULL, INFORMACOES VARCHAR(200) NOT NULL)");
     }
 
-    public List<Product> produtosObter(int tipo){
+    public List<Product> obterProdutos(int tipo){
         List<Product> products = new ArrayList<>();
 
        Cursor sqlCur =  getDatabase().rawQuery("SELECT * FROM PRODUCTS WHERE TIPO = ?", new String[]{String.valueOf(tipo)});

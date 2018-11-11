@@ -25,4 +25,5 @@
     <string name="booking_date">Booking Date</string>
     <string name="booking_people">Booking People</string>
     <string name="booking_info">Booking Information</string>
+    <string name="error_download">Error on trying to download data.</string>
 </resources>
