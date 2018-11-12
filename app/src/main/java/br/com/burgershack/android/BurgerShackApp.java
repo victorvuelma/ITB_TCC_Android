@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import br.com.burgershack.android.activity.SplashActivity;
 import br.com.burgershack.android.data.DataLocal;
 import br.com.burgershack.android.data.DataWeb;
 

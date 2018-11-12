@@ -15,8 +15,6 @@ public class MenuActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_activity);
-
-        BurgerShackApp.init(this);
     }
 
     public void menuHamburgers(View v) {

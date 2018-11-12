@@ -1,26 +1,27 @@
 package br.com.burgershack.android.data;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Handler;
 import android.widget.Toast;
 
 import br.com.burgershack.android.BurgerShackApp;
 import br.com.burgershack.android.R;
+import br.com.burgershack.android.activity.MenuActivity;
 
 public class DataWeb {
 
     private Activity activity;
 
-    private String contentProducts;
-
-    public DataWeb(Activity activity){
+    public DataWeb(Activity activity) {
         this.activity = activity;
     }
 
-    public void download(){
-        DataRequest produtosRequest = new DataRequest(){
+    public void download() {
+        DataRequest produtosRequest = new DataRequest() {
             @Override
             protected void onPostExecute(String s) {
-                if(s != null) {
+                if (s != null) {
                     if (!s.isEmpty()) {
                         BurgerShackApp.DATA_LOCAL.produtosLimpar();
                         for (String produto : s.split("(\\$)")) {
@@ -37,6 +38,16 @@ public class DataWeb {
                 } else {
                     Toast.makeText(activity.getBaseContext(), R.string.error_download, Toast.LENGTH_LONG).show();
                 }
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent menuIntent = new Intent(activity.getBaseContext(), MenuActivity.class);
+                        activity.startActivity(menuIntent);
+
+                        activity.finish();
+                    }
+                }, 3000);
             }
         };
 
