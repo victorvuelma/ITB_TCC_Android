@@ -47,7 +47,7 @@ public abstract class Mask {
             }
         }
 
-        return  resultBuilder.toString();
+        return resultBuilder.toString();
     }
 
     private static TextWatcher build(final MaskType type, final EditText edt) {

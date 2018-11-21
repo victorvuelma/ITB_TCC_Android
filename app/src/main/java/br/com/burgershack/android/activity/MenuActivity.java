@@ -31,7 +31,7 @@ public class MenuActivity extends Activity {
         startActivity(it);
     }
 
-    public void menuAccompaniments(View v){
+    public void menuAccompaniments(View v) {
         Intent it = new Intent(getBaseContext(), ProductsActivity.class);
         it.putExtra("title", R.string.product_accompaniments);
         it.putExtra("type", 2);
@@ -46,8 +46,13 @@ public class MenuActivity extends Activity {
     }
 
     public void menuAccount(View v) {
-        Intent it = new Intent(getBaseContext(), AccountActivity.class);
-        startActivity(it);
+        if (BurgerShackApp.DATA_LOCAL.clienteLogado()) {
+            Intent it = new Intent(getBaseContext(), AccountActivity.class);
+            startActivity(it);
+        } else {
+            Intent it = new Intent(getBaseContext(), LoginActivity.class);
+            startActivity(it);
+        }
     }
 
 }

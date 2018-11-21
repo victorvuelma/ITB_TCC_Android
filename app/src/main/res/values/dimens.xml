@@ -5,4 +5,5 @@
     <dimen name="app_title_text_size">20sp</dimen>
     <dimen name="app_title_padding">10dp</dimen>
     <dimen name="app_title_menu_dimen">50dp</dimen>
+    <dimen name="app_list_divider">5dp</dimen>
 </resources>

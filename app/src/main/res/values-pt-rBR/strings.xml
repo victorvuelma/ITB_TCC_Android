@@ -24,4 +24,16 @@
     <string name="booking_people">Lugares da Reserva</string>
     <string name="booking_info">Informação da Reserva</string>
     <string name="error_download">Erro ao tentar baixar os dados.</string>
+    <string name="error">Erro</string>
+    <string name="error_field_empty">É necessário preencher este campo.</string>
+    <string name="error_field_cpf">É necessário informar um CPF.</string>
+    <string name="error_fields">Verifique os campos com erro.</string>
+    <string name="dialog_wait">Aguarde...</string>
+    <string name="dialog_connect">Conectando ao servidor.</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="account_logout">Você realmente quer sair?</string>
+    <string name="action_booking_create">Reservar</string>
+    <string name="booking_cpf">Confirme seu CPF</string>
+    <string name="booking_hour">Hora da Reserva</string>
 </resources>

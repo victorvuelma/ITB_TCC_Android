@@ -26,4 +26,16 @@
     <string name="booking_people">Booking People</string>
     <string name="booking_info">Booking Information</string>
     <string name="error_download">Error on trying to download data.</string>
+    <string name="error">Error</string>
+    <string name="error_field_empty">You need to fill this field.</string>
+    <string name="error_field_cpf">You need to fill this field with a CPF.</string>
+    <string name="error_fields">Check the fields with error.</string>
+    <string name="dialog_wait">Wait...</string>
+    <string name="dialog_connect">Connecting to the server</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="account_logout">Do you really want to logout?</string>
+    <string name="action_booking_create">Create Booking</string>
+    <string name="booking_cpf">Please confirm your CPF</string>
+    <string name="booking_hour">Booking Hour</string>
 </resources>

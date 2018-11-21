@@ -59,15 +59,15 @@
         app:layout_constraintTop_toBottomOf="@+id/layoutBookingNewTitle" />
 
     <EditText
-        android:id="@+id/edtBookingNewDate"
+        android:id="@+id/edtBookingNewCpf"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
-        android:hint="@string/booking_date"
-        android:inputType="date"
+        android:hint="@string/booking_cpf"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBookingNewTitle" />
@@ -83,7 +83,36 @@
         android:hint="@string/booking_people"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtBookingNewCpf" />
+
+    <EditText
+        android:id="@+id/edtBookingNewDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="@string/booking_date"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtBookingNewPeople" />
+
+    <EditText
+        android:id="@+id/edtBookingNewHour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="@string/booking_hour"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtBookingNewDate" />
 
@@ -96,10 +125,30 @@
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:hint="@string/booking_info"
-        android:inputType="text"
+        android:inputType="textShortMessage"
+        android:singleLine="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtBookingNewPeople" />
+        app:layout_constraintTop_toBottomOf="@+id/edtBookingNewHour" />
+
+    <Button
+        android:id="@+id/btnBookingNewCreate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawableStart="@drawable/action_booking"
+        android:drawablePadding="@dimen/app_icon_button_drawable_padding"
+        android:onClick="bookingNewCreate"
+        android:padding="10dp"
+        android:text="@string/action_booking_create"
+        android:textAlignment="viewStart"
+        android:textAllCaps="true"
+        android:textSize="@dimen/app_icon_button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtBookingNewInfo" />
 
 </android.support.constraint.ConstraintLayout>

@@ -7,20 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
 import br.com.burgershack.android.BurgerShackApp;
 import br.com.burgershack.android.R;
-import br.com.burgershack.android.object.Booking;
-import br.com.burgershack.android.object.Product;
+import br.com.burgershack.android.object.Reserva;
 
-public class BookingsAdapter extends ArrayAdapter<Booking> {
+public class ReservasAdapter extends ArrayAdapter<Reserva> {
 
-
-    public BookingsAdapter(@NonNull Context context, @NonNull List<Booking> products) {
+    public ReservasAdapter(@NonNull Context context, @NonNull List<Reserva> products) {
         super(context, -1, products);
     }
 
@@ -32,20 +31,27 @@ public class BookingsAdapter extends ArrayAdapter<Booking> {
 
         TextView rowDate = (TextView) rowView.findViewById(R.id.txtBookingRowDate);
         TextView rowPeople = (TextView) rowView.findViewById(R.id.txtBookingRowPeople);
-        TextView rowInformation = (TextView) rowView.findViewById(R.id.txtProductRowValue);
+        TextView rowInformation = (TextView) rowView.findViewById(R.id.txtBookingRowInformation);
+        TextView rowStatus = (TextView) rowView.findViewById(R.id.txtBookingRowStatus);
 
-        Booking booking = getItem(position);
+        Reserva reserva = getItem(position);
 
         StringBuilder peopleBuilder = new StringBuilder();
-        peopleBuilder.append(booking.getPessoas());
+        peopleBuilder.append(reserva.getLugares());
         peopleBuilder.append(" ");
-        peopleBuilder.append((booking.getPessoas() > 1 ? parent.getResources().getString(R.string.people) : parent.getResources().getString(R.string.person)));
+        peopleBuilder.append((reserva.getLugares() > 1 ? parent.getResources().getString(R.string.people) : parent.getResources().getString(R.string.person)));
 
-
-        rowDate.setText(BurgerShackApp.DATE_FORMAT.format(booking.getData()));
+        rowDate.setText(BurgerShackApp.DATE_FORMAT.format(reserva.getData()));
         rowPeople.setText(peopleBuilder.toString());
-        rowInformation.setText(booking.getInformacoes());
+        rowInformation.setText(reserva.getInformacoes());
+        rowStatus.setText(reserva.getSituacao().toString());
 
         return rowView;
     }
+
+    @Override
+    public long getItemId(int position) {
+        return getItem(position).getCodigo();
+    }
+
 }

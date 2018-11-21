@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -12,8 +14,8 @@ import java.util.List;
 
 import br.com.burgershack.android.BurgerShackApp;
 import br.com.burgershack.android.R;
-import br.com.burgershack.android.object.Product;
-import br.com.burgershack.android.adapter.ProductsAdapter;
+import br.com.burgershack.android.adapter.ProdutosAdapter;
+import br.com.burgershack.android.object.Produto;
 
 public class ProductsActivity extends Activity {
 
@@ -30,9 +32,16 @@ public class ProductsActivity extends Activity {
             txtTitle.setText(title);
 
             int type = it.getExtras().getInt("type");
-            List<Product> products = BurgerShackApp.DATA_LOCAL.obterProdutos(type);
-            products.add(new Product(1, "TESTE", "", "TESTE DE DESCRIÇÃO", 10.50, 1));
-            showProducts(products);
+            List<Produto> produtos = BurgerShackApp.DATA_LOCAL.produtosObter(type);
+            produtosExibir(produtos);
+
+            ListView productsList = (ListView) findViewById(R.id.ltvProducts);
+            productsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    productClick(parent, view, position, id);
+                }
+            });
         } catch (NullPointerException ex) {
             finish();
         }
@@ -42,12 +51,17 @@ public class ProductsActivity extends Activity {
         finish();
     }
 
-    public void showProducts(List<Product> products) {
+    public void produtosExibir(List<Produto> produtos) {
         ListView productsList = (ListView) findViewById(R.id.ltvProducts);
 
-        ProductsAdapter productsAdapter = new ProductsAdapter(this, products);
-        productsList.setAdapter(productsAdapter);
+        ProdutosAdapter produtosAdapter = new ProdutosAdapter(this, produtos);
+        productsList.setAdapter(produtosAdapter);
     }
 
+    public void productClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent it = new Intent(getBaseContext(), ProductActivity.class);
+        it.putExtra("codigo", (int) id);
+        startActivity(it);
+    }
 
 }

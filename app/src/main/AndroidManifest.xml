@@ -20,7 +20,6 @@
         <activity android:name=".activity.MenuActivity" />
         <activity android:name=".activity.ProductActivity"/>
         <activity android:name=".activity.ProductsActivity"/>
-        <activity android:name=".activity.BookingActivity"/>
         <activity android:name=".activity.BookingNewActivity"/>
         <activity android:name=".activity.BookingsActivity"/>
     </application>
