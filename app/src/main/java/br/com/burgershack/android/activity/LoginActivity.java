@@ -95,6 +95,10 @@ public class LoginActivity extends Activity {
         Util.openWebPage(this, BurgerShackApp.URL_CADASTRO);
     }
 
+    public void loginForgot(View v) {
+        Util.openWebPage(this, BurgerShackApp.URL_ESQUECI);
+    }
+
     public void loginBack(View v) {
         finish();
     }

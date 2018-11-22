@@ -36,4 +36,5 @@
     <string name="action_booking_create">Reservar</string>
     <string name="booking_cpf">Confirme seu CPF</string>
     <string name="booking_hour">Hora da Reserva</string>
+    <string name="login_forgot">Esqueci minha senha</string>
 </resources>

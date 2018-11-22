@@ -162,7 +162,7 @@ public class LocalData {
         if (cursor.moveToFirst()) {
             do {
                 int codigo = cursor.getInt(cursor.getColumnIndex(RESERVAS_CODIGO));
-                Date data = new Date(cursor.getLong(cursor.getColumnIndex(RESERVAS_DATA)) * 1000);
+                Date data = new Date(cursor.getLong(cursor.getColumnIndex(RESERVAS_DATA)));
                 int lugares = cursor.getInt(cursor.getColumnIndex(RESERVAS_LUGARES));
                 String informacoes = cursor.getString(cursor.getColumnIndex(RESERVAS_INFORMACOES));
                 String situacao = cursor.getString(cursor.getColumnIndex(RESERVAS_SITUACAO));

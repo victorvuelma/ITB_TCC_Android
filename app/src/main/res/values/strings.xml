@@ -38,4 +38,5 @@
     <string name="action_booking_create">Create Booking</string>
     <string name="booking_cpf">Please confirm your CPF</string>
     <string name="booking_hour">Booking Hour</string>
+    <string name="login_forgot">Forgot my password</string>
 </resources>
