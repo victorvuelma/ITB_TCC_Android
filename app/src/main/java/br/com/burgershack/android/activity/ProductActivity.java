@@ -30,7 +30,7 @@ public class ProductActivity extends Activity {
 
             txtNome.setText(produto.getNome());
             txtValor.setText(BurgerShackApp.CURRENCY_FORMAT.format(produto.getValor()));
-            txtDescricao.setText(produto.getDescricao());
+            txtDescricao.setText(produto.getDescricao().replace(".", "\n"));
             imgProduto.setImageDrawable(Util.blobToDrawble(produto.getImagem()));
         }
     }

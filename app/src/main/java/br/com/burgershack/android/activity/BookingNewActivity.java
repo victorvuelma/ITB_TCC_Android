@@ -118,8 +118,7 @@ public class BookingNewActivity extends Activity {
     }
 
     public void bookingDate(View v) {
-
-        new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog datePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 bookingCalendar.set(Calendar.YEAR, year);
@@ -128,11 +127,13 @@ public class BookingNewActivity extends Activity {
 
                 updateDate();
             }
-        }, bookingCalendar.get(Calendar.YEAR), bookingCalendar.get(Calendar.MONTH), bookingCalendar.get(Calendar.DAY_OF_MONTH)).show();
+        }, bookingCalendar.get(Calendar.YEAR), bookingCalendar.get(Calendar.MONTH), bookingCalendar.get(Calendar.DAY_OF_MONTH));
+datePicker.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+        datePicker.show();
     }
 
     public void bookingHour(View v) {
-        new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+        TimePickerDialog timePicker = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hour, int minute) {
                 bookingCalendar.set(Calendar.HOUR_OF_DAY, hour);
@@ -140,7 +141,8 @@ public class BookingNewActivity extends Activity {
 
                updateDate();
             }
-        }, bookingCalendar.get(Calendar.HOUR_OF_DAY), bookingCalendar.get(Calendar.MINUTE), true).show();
+        }, bookingCalendar.get(Calendar.HOUR_OF_DAY), bookingCalendar.get(Calendar.MINUTE), true);
+        timePicker.show();
     }
 
     private void updateDate(){

@@ -34,14 +34,6 @@ public class ProductsActivity extends Activity {
             int type = it.getExtras().getInt("type");
             List<Produto> produtos = BurgerShackApp.DATA_LOCAL.produtosObter(type);
             produtosExibir(produtos);
-
-            ListView productsList = (ListView) findViewById(R.id.ltvProducts);
-            productsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    productClick(parent, view, position, id);
-                }
-            });
         } catch (NullPointerException ex) {
             finish();
         }
@@ -56,6 +48,13 @@ public class ProductsActivity extends Activity {
 
         ProdutosAdapter produtosAdapter = new ProdutosAdapter(this, produtos);
         productsList.setAdapter(produtosAdapter);
+
+        productsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                productClick(parent, view, position, id);
+            }
+        });
     }
 
     public void productClick(AdapterView<?> parent, View view, int position, long id) {
