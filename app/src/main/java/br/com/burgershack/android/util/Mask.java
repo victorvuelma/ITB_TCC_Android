@@ -27,7 +27,7 @@ import java.util.Arrays;
 public abstract class Mask {
 
     public static String unmask(String s) {
-        return s.replaceAll("[-./() ]", "");
+        return s.replaceAll("[-./(): ]", "");
     }
 
     public static String mask(MaskType type, String s) {
@@ -100,6 +100,8 @@ public abstract class Mask {
         CEP("#####-###"), // CEP
         CNPJ("##.###.###/####-##"), // CNPJ
         CPF("###.###.###-##"), // CPF
+        DATE("##/##/####"), // DATA
+        HOUR("##:##"), // HORA
         TEL("(##) ####-####"); // Telefone Residencial
 
         String mask;

@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 import br.com.burgershack.android.BurgerShackApp;
@@ -41,7 +39,7 @@ public class ReservasAdapter extends ArrayAdapter<Reserva> {
         peopleBuilder.append(" ");
         peopleBuilder.append((reserva.getLugares() > 1 ? parent.getResources().getString(R.string.people) : parent.getResources().getString(R.string.person)));
 
-        rowDate.setText(BurgerShackApp.DATE_FORMAT.format(reserva.getData()));
+        rowDate.setText(BurgerShackApp.DATETIME_FORMAT.format(reserva.getData()));
         rowPeople.setText(peopleBuilder.toString());
         rowInformation.setText(reserva.getInformacoes());
         rowStatus.setText(reserva.getSituacao().toString());

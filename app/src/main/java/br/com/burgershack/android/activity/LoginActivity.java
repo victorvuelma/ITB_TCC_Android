@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -71,6 +72,7 @@ public class LoginActivity extends Activity {
                         BurgerShackApp.DATA_WEB.downloadReservas(LoginActivity.this);
                     } else {
                         result = result.substring(1);
+                        result = result.replace(".", ".\n");
                         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
                         builder.setMessage(result);
                         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -83,8 +85,9 @@ public class LoginActivity extends Activity {
                     }
                 }
             };
-            loginRequest.execute(BurgerShackApp.URL_API + "?action=login&cpf="
-                    + edtCpf.getText().toString() + "&senha=" + edtPassword.getText().toString());
+            loginRequest.execute(BurgerShackApp.URL_API + "?action=login" +
+                    "&cpf=" + edtCpf.getText().toString() +
+                    "&senha=" + Base64.encodeToString(edtPassword.getText().toString().getBytes(), Base64.DEFAULT));
         }
     }
 
