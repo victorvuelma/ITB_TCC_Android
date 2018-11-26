@@ -52,29 +52,41 @@ public class LoginActivity extends Activity {
                     BurgerShackApp.DATA_LOCAL.clienteLimpar();
                     BurgerShackApp.DATA_LOCAL.reservasLimpar();
 
-                    if (result.startsWith("1")) {
-                        result = result.substring(1);
-                        String[] data = result.split("&");
-                        BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_COD, data[1]);
-                        BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_NOME, data[2]);
-                        BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_CPF, data[3]);
-                        BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_EMAIL, data[4]);
-                        BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_CELULAR, data[5]);
-                        BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_CADASTRO, data[6]);
+                    if (result != null && !result.isEmpty() && result.length() >= 1) {
+                        if (result.startsWith("1")) {
+                            result = result.substring(1);
+                            String[] data = result.split("&");
+                            BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_COD, data[1]);
+                            BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_NOME, data[2]);
+                            BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_CPF, data[3]);
+                            BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_EMAIL, data[4]);
+                            BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_CELULAR, data[5]);
+                            BurgerShackApp.DATA_LOCAL.clienteInserir(LocalData.CLIENTE_CADASTRO, data[6]);
 
-                        Toast.makeText(LoginActivity.this, data[0], Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, data[0], Toast.LENGTH_LONG).show();
 
-                        Intent it = new Intent(LoginActivity.this, AccountActivity.class);
-                        startActivity(it);
+                            Intent it = new Intent(LoginActivity.this, AccountActivity.class);
+                            startActivity(it);
 
-                        finish();
+                            finish();
 
-                        BurgerShackApp.DATA_WEB.downloadReservas(LoginActivity.this);
+                            BurgerShackApp.DATA_WEB.downloadReservas(LoginActivity.this);
+                        } else {
+                            result = result.substring(1);
+                            result = result.replace(".", ".\n");
+                            AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                            builder.setMessage(result);
+                            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                            builder.create().show();
+                        }
                     } else {
-                        result = result.substring(1);
-                        result = result.replace(".", ".\n");
                         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                        builder.setMessage(result);
+                        builder.setMessage("Não foi possível conectar ao servidor.");
                         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

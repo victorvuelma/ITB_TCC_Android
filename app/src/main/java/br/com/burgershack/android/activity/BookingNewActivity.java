@@ -81,7 +81,7 @@ public class BookingNewActivity extends Activity {
                 @Override
                 protected void onPostExecute(String result) {
                     super.onPostExecute(result);
-                    if (result != null && !result.isEmpty()) {
+                    if (result != null && !result.isEmpty() && result.length() >= 1) {
                         if (result.startsWith("1")) {
                             Toast.makeText(BookingNewActivity.this, result.substring(1), Toast.LENGTH_LONG).show();
 
@@ -100,6 +100,16 @@ public class BookingNewActivity extends Activity {
                             });
                             builder.create().show();
                         }
+                    } else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(BookingNewActivity.this);
+                        builder.setMessage("Não foi possível conectar ao servidor.");
+                        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.create().show();
                     }
                 }
             };
@@ -111,6 +121,7 @@ public class BookingNewActivity extends Activity {
                     + "&lugares=" + edtPeople.getText().toString()
                     + "&info=" + Base64.encodeToString(edtInfo.getText().toString().getBytes(), Base64.DEFAULT));
         }
+
     }
 
     public void bookingNewBack(View v) {
@@ -128,7 +139,7 @@ public class BookingNewActivity extends Activity {
                 updateDate();
             }
         }, bookingCalendar.get(Calendar.YEAR), bookingCalendar.get(Calendar.MONTH), bookingCalendar.get(Calendar.DAY_OF_MONTH));
-datePicker.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+        datePicker.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
         datePicker.show();
     }
 
@@ -139,15 +150,15 @@ datePicker.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
                 bookingCalendar.set(Calendar.HOUR_OF_DAY, hour);
                 bookingCalendar.set(Calendar.MINUTE, minute);
 
-               updateDate();
+                updateDate();
             }
         }, bookingCalendar.get(Calendar.HOUR_OF_DAY), bookingCalendar.get(Calendar.MINUTE), true);
         timePicker.show();
     }
 
-    private void updateDate(){
+    private void updateDate() {
         EditText edtHour = (EditText) findViewById(R.id.edtBookingNewHour);
-        edtHour.setText(BurgerShackApp.TIME_FORMAT.format(bookingCalendar.getTime() ));
+        edtHour.setText(BurgerShackApp.TIME_FORMAT.format(bookingCalendar.getTime()));
 
         EditText edtDate = (EditText) findViewById(R.id.edtBookingNewDate);
         edtDate.setText(BurgerShackApp.DATE_FORMAT.format(bookingCalendar.getTime()));
